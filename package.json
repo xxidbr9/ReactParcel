@@ -1,0 +1,67 @@
+{
+    "name": "react-parcel-boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "prebuild": "run-s clean",
+        "clean": "rimraf ./build",
+        "lint": "run-s lint:code",
+        "lint:code": "eslint --fix --ext js,jsx src ",
+        "start": "rimraf build && parcel -p 3000 watch public/index.html --out-dir build",
+        "build": "parcel build public/index.html --out-dir build --no-source-maps",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "parcel-plugin-structurize": {
+        "scripts": {
+            "match": "*.{js,js.map}",
+            "folder": "assets/js"
+        },
+        "styles": {
+            "match": "*.{css,css.map}",
+            "folder": "assets/css"
+        },
+        "assets": {
+            "match": "*.{png,svg,jpg,jpg2,jpeg,gif,bmp,webm}",
+            "folder": "assets/image"
+        }
+    },
+    "author": "xxidbr9",
+    "license": "MIT",
+    "dependencies": {
+        "framer": "^1.2.5",
+        "gsap": "^3.4.2",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-redux": "^7.2.1",
+        "react-router": "^5.2.0",
+        "react-router-dom": "^5.2.0",
+        "react-transition-group": "^4.4.1",
+        "redux": "^4.0.5"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/plugin-transform-runtime": "^7.11.0",
+        "@babel/preset-react": "^7.10.4",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-eslint": "^10.1.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "eslint": "^7.6.0",
+        "eslint-config-airbnb": "^18.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsx-a11y": "^6.3.1",
+        "eslint-plugin-react": "^7.20.5",
+        "eslint-plugin-react-hooks": "^4.0.8",
+        "node-sass": "^4.14.1",
+        "npm-run-all": "^4.1.5",
+        "parcel": "^2.0.0-beta.1",
+        "parcel-bundler": "^1.12.4",
+        "parcel-plugin-compress": "^2.0.2",
+        "parcel-plugin-eslint": "^1.0.8-2",
+        "parcel-plugin-structurize": "^1.2.0",
+        "register-service-worker": "^1.7.1",
+        "rimraf": "^3.0.2"
+    }
+}
